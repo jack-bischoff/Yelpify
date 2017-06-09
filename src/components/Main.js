@@ -26,7 +26,7 @@ class App extends React.Component {
     if (!navigator.geolocation) {
       return ( <p>Geolocation services unavailable for this browser</p> );
     }
-    return <MapContent location={this.state.location} api={this.state.api} />
+    return <MapContent location={this.state.location} />
   }
 }
 export default App;
