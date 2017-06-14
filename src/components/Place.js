@@ -35,7 +35,9 @@ class Place extends React.Component {
                                     {'Cost:'}
                                 </p>
                                 <p className=" uk-margin-remove-top">
-                                    {'$$$'}
+                                    <span data-uk-icon="icon: credit-card; ratio: 1"></span>
+                                    <span data-uk-icon="icon: credit-card; ratio: 1"></span>
+                                    <span data-uk-icon="icon: credit-card; ratio: 1"></span>
                                 </p>
                             </div>
 
@@ -44,7 +46,10 @@ class Place extends React.Component {
                                     {'Rating:'}
                                 </p>
                                 <p className=" uk-margin-remove-top">
-                                    {'5 Stars'}
+                                    <span data-uk-icon="icon: star; ratio: 1"></span>
+                                    <span data-uk-icon="icon: star; ratio: 1"></span>
+                                    <span data-uk-icon="icon: star; ratio: 1"></span>
+                                    <span data-uk-icon="icon: star; ratio: 1"></span>
                                 </p>
                             </div>
                         </div>

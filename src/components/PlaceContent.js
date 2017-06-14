@@ -7,8 +7,8 @@ class PlaceContent extends React.Component {
         <div>
           <div className="uk-background-turqoise uk-light uk-padding-small">
             <h1 className="uk-margin-remove">{'Yelpify'}</h1>
-            <form className="uk-form">
-                <input type="text" className="uk-input uk-margin-small-top little-round" placeholder="Search" />
+            <form className="uk-form uk-margin-small-top">
+                <input type="search" className="uk-input little-round" placeholder="Search" />
             </form>
           </div>
           <div className="uk-height-max uk-overflow-auto">
