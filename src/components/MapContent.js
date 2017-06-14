@@ -26,11 +26,11 @@ class MapContent extends React.Component {
 
       return (this.state.ready) ?
       (
-        <div className="uk-section">
-          <div className="">
-            
-            <div data-uk-grid>
-              <div className="uk-width-2-3 ">
+        <div>
+          <div>
+
+            <div data-uk-grid data-uk-height-viewport>
+              <div className="uk-width-3-4">
                 <GoogleMapReact
                   center={this.props.location}
                   zoom={18}
@@ -38,10 +38,10 @@ class MapContent extends React.Component {
                   <CurrentLocationMarker {...this.props.location} />
                 </GoogleMapReact>
               </div>
-              
-              <div className="uk-width-1-3 uk-padding-remove">
-                <div className="uk-section uk-section-muted uk-panel-scrollable uk-height-1-1">
-                  <div className="">
+
+              <div className="uk-width-1-4 uk-padding-remove uk-box-shadow-large z-high">
+                <div className="uk-section uk-padding-remove-top">
+                  <div>
                     <PlaceContent />
                   </div>
                 </div>

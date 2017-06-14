@@ -1,5 +1,6 @@
 import React from 'react';
 import MapContent from './MapContent';
+require("../styles/App.css");
 
 class App extends React.Component {
   constructor(){
@@ -8,7 +9,7 @@ class App extends React.Component {
       location: {}
     }
   }
-  
+
   componentDidMount(){
      navigator.geolocation.getCurrentPosition( (position) => {
         let coords = {

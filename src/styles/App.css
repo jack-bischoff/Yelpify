@@ -1,21 +1,21 @@
 /* Base Application Styles */
 body {
-  color: #fff;
-  background: #222;
+    font-family: 'Lato' !important;
 }
 
-.index img {
-  margin: 40px auto;
-  border-radius: 4px;
-  background: #fff;
-  display: block;
+h1, h2 {
+    font-family: 'Lato' !important;
+    font-weight: 300 !important;
 }
 
-.index .notice {
-  margin: 20px auto;
-  padding: 15px 0;
-  text-align: center;
-  border: 1px solid #000;
-  border-width: 1px 0;
-  background: #666;
+h3, h4, h5, h6 {
+    font-family: 'Lato' !important;
+}
+
+.uk-background-turqoise {
+    background-color: #1abc9c;
+}
+
+.z-high {
+    z-index: 99;
 }
