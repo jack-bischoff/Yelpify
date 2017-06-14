@@ -39,8 +39,8 @@ class MapContent extends React.Component {
                 </GoogleMapReact>
               </div>
 
-              <div className="uk-width-1-4 uk-padding-remove uk-box-shadow-large z-high">
-                <div className="uk-section uk-padding-remove-top">
+              <div className="uk-width-1-4 uk-padding-remove uk-box-shadow-large z-low ">
+                <div className="uk-section uk-padding-remove-top uk-padding-remove-bottom">
                   <div>
                     <PlaceContent />
                   </div>

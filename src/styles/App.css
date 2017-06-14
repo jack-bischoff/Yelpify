@@ -19,3 +19,15 @@ h3, h4, h5, h6 {
 .z-high {
     z-index: 99;
 }
+
+.z-medium {
+    z-index: 9;
+}
+
+.z-low {
+    z-index: 4;
+}
+
+.uk-height-max {
+    height: calc(100vh - 80.4px);
+}
