@@ -2,9 +2,13 @@ import React from 'react';
 
 class Place extends React.Component {
 
-    render() {
-        return (<h1>Place</h1>);
-    }
+  render() {
+    return (
+      <div>
+        <h5>{this.props.name}</h5>
+      </div>
+    )
+  }
 
 }
 

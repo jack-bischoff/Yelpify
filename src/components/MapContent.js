@@ -24,34 +24,36 @@ class MapContent extends React.Component {
 
   render() {
 
-      return (this.state.ready) ?
-      (
-        <div className="uk-section">
-          <div className="">
-            
-            <div data-uk-grid>
-              <div className="uk-width-2-3 ">
-                <GoogleMapReact
-                  center={this.props.location}
-                  zoom={18}
-                >
-                  <CurrentLocationMarker {...this.props.location} />
-                </GoogleMapReact>
-              </div>
-              
-              <div className="uk-width-1-3 uk-padding-remove">
-                <div className="uk-section uk-section-muted uk-panel-scrollable uk-height-1-1">
-                  <div className="">
-                    <PlaceContent />
-                  </div>
-                </div>
-              </div>
-            </div>
+    const data = [
+      {name: "Restaurant"},
+      {name: "Delicious Restaurant"},
+      {name: "Extraordinary Restaurant"},
+      {name: "Fabulous Restaurant"},
+      {name: "Worse than a 7-11 bathroom"}
+    ]
 
+    return (this.state.ready) ?
+    (
+      <div>
+        <div data-uk-grid data-uk-height-viewport>
+          <div className="uk-width-3-4 ">
+            <GoogleMapReact
+              center={this.props.location}
+              zoom={18}
+            >
+              <CurrentLocationMarker {...this.props.location} />
+            </GoogleMapReact>
+          </div>
+          
+          <div className="uk-width-1-4 uk-padding-remove">
+            <div className="uk-section uk-section-muted uk-height-1-1">
+              <PlaceContent places={data} />
+            </div>
           </div>
         </div>
-      )
-      : <h1>Loading Map...</h1>
+      </div>
+    )
+    : <h1>Loading Map...</h1>
   }
 }
 

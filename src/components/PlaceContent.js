@@ -6,7 +6,16 @@ class PlaceContent extends React.Component {
     render() {
       return (
         <div>
-          <h1>PlaceContent</h1>
+          <h3>Restaurants near you</h3>
+          {
+            this.props.places.map((place) => {
+              return (
+                <ul>
+                  <Place name={place.name} />
+                </ul>
+              );
+            })
+          }
         </div>
         );
     }
