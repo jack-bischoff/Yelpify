@@ -7,7 +7,6 @@ class PlaceContent extends React.Component {
       return (
         <div>
           <h1>PlaceContent</h1>
-          <Place />
         </div>
         );
     }

@@ -2,8 +2,9 @@ import React from 'react';
 //import PlaceContent from './PlaceContent';
 import GoogleMapReact from 'google-map-react';
 import CurrentLocationMarker from './currentLocationMarker';
+import PlaceContent from './PlaceContent';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+require('../styles/mapContent.css');
 
 class MapContent extends React.Component {
   constructor(props){
@@ -15,26 +16,42 @@ class MapContent extends React.Component {
 
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(){
     this.setState({
       ready: true
     });
   }
 
   render() {
-    if (this.state.ready){
-      return (
-        <div style={{width: '800px', height: '400px'}}>
-          <GoogleMapReact
-            center={this.props.location}
-            zoom={18}
-          >
-            <CurrentLocationMarker {...this.props.location} />
-          </GoogleMapReact>
+
+      return (this.state.ready) ?
+      (
+        <div className="uk-section">
+          <div className="">
+            
+            <div data-uk-grid>
+              <div className="uk-width-2-3 ">
+                <GoogleMapReact
+                  center={this.props.location}
+                  zoom={18}
+                >
+                  <CurrentLocationMarker {...this.props.location} />
+                </GoogleMapReact>
+              </div>
+              
+              <div className="uk-width-1-3 uk-padding-remove">
+                <div className="uk-section uk-section-muted uk-panel-scrollable uk-height-1-1">
+                  <div className="">
+                    <PlaceContent />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-      );
-    }
-    return <h1>Loading Map...</h1>
+      )
+      : <h1>Loading Map...</h1>
   }
 }
 

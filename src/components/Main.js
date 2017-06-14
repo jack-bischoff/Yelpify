@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      location: {},
+      location: {}
     }
   }
   
@@ -17,7 +17,7 @@ class App extends React.Component {
         }
 
         this.setState({
-          location: coords,
+          location: coords
         });
       });
   }
