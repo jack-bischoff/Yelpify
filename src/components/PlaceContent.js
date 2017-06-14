@@ -11,6 +11,9 @@ class PlaceContent extends React.Component {
           </div>
           <ul className="uk-list uk-list-striped uk-margin-remove-top">
             <Place />
+            <Place />
+            <Place />
+            <Place />
           </ul>
         </div>
         );
