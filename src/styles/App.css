@@ -1,21 +1,36 @@
-/* Base Application Styles */
 body {
-  color: #fff;
-  background: #222;
+    font-family: 'Nunito' !important;
 }
 
-.index img {
-  margin: 40px auto;
-  border-radius: 4px;
-  background: #fff;
-  display: block;
+h1, h2 {
+    font-family: 'Nunito' !important;
+    font-weight: 300 !important;
 }
 
-.index .notice {
-  margin: 20px auto;
-  padding: 15px 0;
-  text-align: center;
-  border: 1px solid #000;
-  border-width: 1px 0;
-  background: #666;
+h3, h4, h5, h6 {
+    font-family: 'Nunito' !important;
+}
+
+.headerColor {
+    background-color: #1abc9c;
+}
+
+.z-high {
+    z-index: 99;
+}
+
+.z-medium {
+    z-index: 9;
+}
+
+.z-low {
+    z-index: 4;
+}
+
+.uk-height-max {
+    height: calc(100vh - 80.4px);
+}
+
+.littleRound {
+  border-radius: 3px !important;
 }

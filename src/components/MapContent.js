@@ -4,8 +4,6 @@ import GoogleMapReact from 'google-map-react';
 import CurrentLocationMarker from './currentLocationMarker';
 import PlaceContent from './PlaceContent';
 
-require('../styles/mapContent.css');
-
 class MapContent extends React.Component {
   constructor(props){
     super(props)
@@ -29,6 +27,16 @@ class MapContent extends React.Component {
       {name: "Delicious Restaurant"},
       {name: "Extraordinary Restaurant"},
       {name: "Fabulous Restaurant"},
+      {name: "Worse than a 7-11 bathroom"},
+      {name: "Restaurant"},
+      {name: "Delicious Restaurant"},
+      {name: "Extraordinary Restaurant"},
+      {name: "Fabulous Restaurant"},
+      {name: "Worse than a 7-11 bathroom"},
+      {name: "Restaurant"},
+      {name: "Delicious Restaurant"},
+      {name: "Extraordinary Restaurant"},
+      {name: "Fabulous Restaurant"},
       {name: "Worse than a 7-11 bathroom"}
     ]
 
@@ -45,8 +53,8 @@ class MapContent extends React.Component {
             </GoogleMapReact>
           </div>
           
-          <div className="uk-width-1-4 uk-padding-remove">
-            <div className="uk-section uk-section-muted uk-height-1-1">
+          <div className="uk-width-1-4 uk-padding-remove uk-box-shadow-large z-low">
+            <div className="uk-section uk-padding-remove uk-height-1-1">
               <PlaceContent places={data} />
             </div>
           </div>
