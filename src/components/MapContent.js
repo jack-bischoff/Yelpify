@@ -3,25 +3,64 @@ import GoogleMapReact from 'google-map-react';
 import CurrentLocationMarker from './currentLocationMarker';
 import PlaceContent from './PlaceContent';
 
-class MapContent extends React.Component {
-  constructor(props){
-    super(props)
 
-    this.state = {
-      ready: false
+
+class MapContent extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  state = {
+    ready: false,
+    map: {}
+  }
+
+  componentWillReceiveProps(nextProps){
+    const location = nextProps.location;
+    const urlParams = {
+      key: ' AIzaSyDLpwXrHJQf_aXsMdkiVPwtV1JKPLBz-8w',
+      libraries: 'places'
     }
 
-  }
 
-  _loadPlaces(){
-  }
+    const map = 
+    <GoogleMapReact
+      bootstrapURLKeys={urlParams}
+      yesIWantToUseGoogleMapApiInternals={true}
+      center={location}
+      zoom={18}
+      onGoogleApiLoaded={ 
+        ({map, maps}) => {
+          let request = {
+            location: {...location},
+            radius: 1000,
+            type: ['restaurant']
+          }
 
-  componentWillReceiveProps(){
-    //this._loadPlaces();
+          let service = new maps.places.PlacesService(map);
+          service.nearbySearch(request, (results, status) => {
+            if (status === maps.places.PlacesServiceStatus.OK) {
+              results.map( (place) => {
+                console.log(place.name);
+              })
+            }
+          });
+        }
+      }
+    >
+      <CurrentLocationMarker {...location} />
+    </GoogleMapReact>
+    
+
     this.setState({
-      ready: true
+      ready: true,
+      map: map
     });
   }
+
+  componentDidMount(){
+    
+  }
+
 
   render() {
 
@@ -49,12 +88,7 @@ class MapContent extends React.Component {
       <div>
         <div data-uk-grid data-uk-height-viewport>
           <div className='uk-width-3-4 '>
-            <GoogleMapReact
-              center={this.props.location}
-              zoom={18}
-            >
-              <CurrentLocationMarker {...this.props.location} />
-            </GoogleMapReact>
+            {this.state.map}
           </div>
 
           <div className='uk-width-1-4 uk-padding-remove uk-box-shadow-large z-low'>
