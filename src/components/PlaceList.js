@@ -32,7 +32,6 @@ export default class PlaceList extends React.Component {
   }
   componentWillReceiveProps(nextProps) {
     if (this.props.location !== nextProps.location || (this.props.api.length === 0 && nextProps.api.length !== 0)) {
-      console.log("PlaceList Props Passed.")
       this._getPlacesByLocation(nextProps.location, nextProps.api);
     }
 
@@ -58,8 +57,11 @@ export default class PlaceList extends React.Component {
               {
                 this.state.places.map((place) => {
                   return (
-                    <li>
-                      <Place name={place.name} />
+                    <li key={place.place_id}>
+                      <Place
+                        name={place.name}
+                        rating={place.rating}
+                      />
                     </li>
                   );
                 })
