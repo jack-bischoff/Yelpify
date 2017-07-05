@@ -20,7 +20,6 @@ export default class MapDisplay extends React.Component {
         yesIWantToUseGoogleMapApiInternals
         onGoogleApiLoaded={
           ({map, maps}) => {
-            console.log("onGoogleApiLoaded")
             this.props.apiLoaded(map, maps);
           }
         }
@@ -28,7 +27,7 @@ export default class MapDisplay extends React.Component {
         <LocationMarker {...this.props.location} icon={'user'} />
         {
           this.props.markers.map( (marker) => {
-            return <LocationMarker {...marker.location} key={marker.id} />
+            return <LocationMarker key={marker.id} {...marker.location}  />
           })
         }
       </GoogleMapReact>
