@@ -41,5 +41,8 @@ h3, h4, h5, h6 {
 
 .uk-text-smallest {
   font-size: 13px;
+}
 
+.dollarFormat {
+  color: #85bb65 !important;
 }
