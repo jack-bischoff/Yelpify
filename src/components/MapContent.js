@@ -25,10 +25,22 @@ export default class MapContent extends React.Component {
     });
   }
 
-  _updateMarkers(newMarkers) {
+  _updateMarkers(newPlaces) {
+    let newMarkers = []
+    for (let i = 0; i < newPlaces.length; i++) {
+      newMarkers.push(this._createMarker(newPlaces[i]));
+    }
+
     this.setState({
       markers: newMarkers
     });
+  }
+
+  _createMarker(place) {
+    return {
+      location: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()},
+      id: place.place_id
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,7 +53,6 @@ export default class MapContent extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (this.state.ready) ?
     (
       <div>
