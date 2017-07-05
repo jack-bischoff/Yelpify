@@ -70,7 +70,7 @@ export default class PlaceList extends React.Component {
     return (
       <div>
         <div className="headerColor uk-light uk-padding-small">
-          <h2 className="uk-padding-small uk-margin-remove">Yelpify</h2>
+          <h1 className="uk-padding-small uk-margin-remove">Yelpify</h1>
           <form className="uk-form">
               <input
                 type="text"
@@ -90,6 +90,7 @@ export default class PlaceList extends React.Component {
                       <Place
                         name={place.name}
                         rating={place.rating}
+                        price={place.price_level}
                         distance={this._calculateDistance(place.geometry.location, this.props.location)}
                       />
                     </li>
