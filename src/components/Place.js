@@ -5,7 +5,7 @@ class Place extends React.Component {
   render() {
     return (
       <div>
-        <div className="" data-uk-grid>
+        <div data-uk-grid>
           <div className="uk-width-1-2">
             <h5 className="uk-margin-remove">{this.props.name}</h5>
             <div className="uk-text-smallest">
@@ -16,7 +16,12 @@ class Place extends React.Component {
 
           <div className="uk-width-1-2">
             <div className="uk-margin-xlarge-left">
-              <p className="uk-text-smallest">{this.props.rating} <span data-uk-icon="icon: star; ratio: .9" className="starFormat"></span> </p>
+              <p className="uk-text-smallest uk-margin-remove">{this.props.rating} <i className="fa fa-star starFormat" aria-hidden="true"></i></p>
+
+              {this.props.price !== undefined &&
+                <p className="uk-text-smallest uk-margin-remove">{this.props.price} <i className="fa fa-money dollarFormat" aria-hidden="true"></i></p>
+              }
+
             </div>
           </div>
         </div>
