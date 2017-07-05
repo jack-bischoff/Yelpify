@@ -28,7 +28,7 @@ h3, h4, h5, h6 {
 }
 
 .uk-height-max {
-    height: calc(100vh - 80.4px);
+    height: calc(100vh - 151.6px);
 }
 
 .littleRound {
@@ -37,10 +37,9 @@ h3, h4, h5, h6 {
 
 .starFormat {
   color: #FFDF00 !important;
-  margin-top: -8px;
 }
 
 .uk-text-smallest {
-  font-size: 12px;
+  font-size: 13px;
 
 }
