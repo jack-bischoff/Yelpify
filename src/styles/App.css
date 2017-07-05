@@ -34,3 +34,13 @@ h3, h4, h5, h6 {
 .littleRound {
   border-radius: 3px !important;
 }
+
+.starFormat {
+  color: #FFDF00 !important;
+  margin-top: -8px;
+}
+
+.uk-text-smallest {
+  font-size: 12px;
+
+}
