@@ -4,15 +4,19 @@ class Place extends React.Component {
 
   render() {
     return (
-      <div data-uk-grid>
-        <div className="uk-width-4-5">
-          <h5>{this.props.name}</h5>
-        </div>
-        <div className="uk-width-1-5">
-          <div className="uk-text-center">
-            <p className="uk-text-smallest uk-margin-remove">{this.props.rating}</p>
-            <div className="starFormat">
-              <span data-uk-icon="icon: star; ratio: 0.8"></span>
+      <div>
+        <div className="" data-uk-grid>
+          <div className="uk-width-1-2">
+            <h5 className="uk-margin-remove">{this.props.name}</h5>
+            <div className="uk-text-smallest">
+              <p><i>{this.props.distance + ' mi away'}</i></p>
+            </div>
+
+          </div>
+
+          <div className="uk-width-1-2">
+            <div className="uk-margin-xlarge-left">
+              <p className="uk-text-smallest">{this.props.rating} <span data-uk-icon="icon: star; ratio: .9" className="starFormat"></span> </p>
             </div>
           </div>
         </div>
