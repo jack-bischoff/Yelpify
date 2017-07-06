@@ -5,7 +5,8 @@ import Place from './Place';
 export default class PlaceList extends React.Component {
 
   state = {
-    places: []
+    places: [],
+    searchWord: ''
   }
 
   _getPlacesByLocation(location, api) {
@@ -32,7 +33,6 @@ export default class PlaceList extends React.Component {
   }
   componentWillReceiveProps(nextProps) {
     if (this.props.location !== nextProps.location || (this.props.api.length === 0 && nextProps.api.length !== 0)) {
-      console.log("PlaceList Props Passed.")
       this._getPlacesByLocation(nextProps.location, nextProps.api);
     }
 
@@ -48,7 +48,7 @@ export default class PlaceList extends React.Component {
                 type="text"
                 className="uk-input uk-margin-small-top little-round"
                 placeholder="Search"
-                ref={(input) => { this.textInput = input; }}
+                onChange={ (e) => {this.setState({searchWord: e.target.value})}}
               />
           </form>
         </div>
@@ -57,11 +57,13 @@ export default class PlaceList extends React.Component {
             <ul className="uk-list uk-list-striped uk-margin-remove">
               {
                 this.state.places.map((place) => {
-                  return (
-                    <li>
-                      <Place name={place.name} />
-                    </li>
-                  );
+                  if (place.name.indexOf(this.state.searchWord) !== -1) {
+                    return (
+                      <li>
+                        <Place name={place.name} />
+                      </li>
+                    );
+                  }
                 })
               }
             </ul>
