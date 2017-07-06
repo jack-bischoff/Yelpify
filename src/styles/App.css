@@ -28,9 +28,21 @@ h3, h4, h5, h6 {
 }
 
 .uk-height-max {
-    height: calc(100vh - 80.4px);
+    height: calc(100vh - 151.6px);
 }
 
 .littleRound {
   border-radius: 3px !important;
+}
+
+.starFormat {
+  color: #FFDF00 !important;
+}
+
+.uk-text-smallest {
+  font-size: 13px;
+}
+
+.dollarFormat {
+  color: #85bb65 !important;
 }
