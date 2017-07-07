@@ -5,7 +5,8 @@ import Place from './Place';
 export default class PlaceList extends React.Component {
 
   state = {
-    places: []
+    places: [],
+    searchWord: ''
   }
 
   _calculateDistance(placeLoc, userLoc) {
@@ -76,7 +77,7 @@ export default class PlaceList extends React.Component {
                 type="text"
                 className="uk-input uk-margin-small-top little-round"
                 placeholder="Search"
-                ref={(input) => { this.textInput = input; }}
+                onChange={ (e) => {this.setState({searchWord: e.target.value})}}
               />
           </form>
         </div>
@@ -85,16 +86,18 @@ export default class PlaceList extends React.Component {
             <ul className="uk-list uk-list-striped uk-margin-remove">
               {
                 this.state.places.map((place) => {
-                  return (
-                    <li key={place.place_id}>
-                      <Place
-                        name={place.name}
-                        rating={place.rating}
-                        price={place.price_level}
-                        distance={this._calculateDistance(place.geometry.location, this.props.location)}
-                      />
-                    </li>
-                  );
+                  if (place.name.indexOf(this.state.searchWord) !== -1) {
+                    return (
+                      <li>
+                        <Place
+                          name={place.name}
+                          rating={place.rating}
+                          price={place.price_level}
+                          distance={this._calculateDistance(place.geometry.location, this.props.location)}
+                        />
+                      </li>
+                    );
+                  }
                 })
               }
             </ul>
